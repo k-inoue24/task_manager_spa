@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="header">
+      <!--リンクタグを生成します。-->
+      <router-link to="/">本日のタスク</router-link>
+      <router-link to="/Add">タスク一覧・新規登録</router-link>
+      <router-link to="/Download">データダウンロード</router-link>
+    </div>
+    <!--上記のリンクタグで設定したコンポーネントが表示される場所です。-->
+    <router-view></router-view>
   </div>
 </template>
 
+<!--コンポーネントの名前を定義します。-->
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
+<!--スタイルの指定をします-->
 <style>
+body {
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#header {
+  height: 40px;
+  background: white;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header a {
+  text-decoration: none;
+  color: #2c3e50;
+  margin: 0 10px;
+  padding: 3px 10px;
+  background: #5ccebf;
 }
 </style>
