@@ -1,51 +1,33 @@
 <template>
   <div id="app">
-    <div id="header">
-      <!--リンクタグを生成します。-->
-      <router-link to="/">本日のタスク</router-link>
-      <router-link to="/Add">タスク一覧・新規登録</router-link>
-      <router-link to="/Download">データダウンロード</router-link>
-    </div>
-    <!--上記のリンクタグで設定したコンポーネントが表示される場所です。-->
-    <router-view></router-view>
+    <header>
+    <div class="title siteTitle"><a href="index.html">Mr. Task Manager</a></div>
+    <nav>
+      <ul>
+        <li><router-link to="/">本日のタスク</router-link></li>
+        <li><router-link to="/Add">タスク一覧・新規登録</router-link></li>
+        <li><router-link to="/Download">データダウンロード</router-link></li>
+      </ul>
+    </nav>
+    </header>
+    <main>
+    <router-view>
+    </router-view>
+    </main>
+    <footer>
+      <a href="https://twitter.com/KeitaBangkok">&copy;いのっち</a>
+    </footer>
   </div>
 </template>
 
-<!--コンポーネントの名前を定義します。-->
 <script>
 export default {
   name: 'App'
 }
 </script>
 
-<!--スタイルの指定をします-->
 <style>
-body {
-  margin: 0;
-}
+@import "./css/destyle.css";
+@import "./css/style.css";
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#header {
-  height: 40px;
-  background: white;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#header a {
-  text-decoration: none;
-  color: #2c3e50;
-  margin: 0 10px;
-  padding: 3px 10px;
-  background: #5ccebf;
-}
 </style>
