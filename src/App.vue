@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-    <div class="title siteTitle"><a href="index.html">Mr. Task Manager</a></div>
+    <div class="title siteTitle"><a href="/">Mr. Task Manager</a></div>
     <nav>
       <ul>
         <li><router-link to="/">本日のタスク</router-link></li>

@@ -5,6 +5,7 @@ import Download from './components/Download'
 
 const router = createRouter({
     history: createWebHistory(),
+    base: process.env.BASE_URL,
     routes: [{
             path: '/',
             component: Top
