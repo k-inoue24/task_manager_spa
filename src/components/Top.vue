@@ -83,7 +83,7 @@ data() {
     },
     modelConfig: {
       type: 'string',
-      mask: 'YYYY'+'年'+'MM'+'月'+'D'+'日' + '（' + 'W' + '）', // Uses 'iso' if missing
+      mask: 'YYYY'+'年'+'M'+'月'+'D'+'日' + '（' + 'W' + '）', // Uses 'iso' if missing
     },
     newTask: '',
     newHour: '',
@@ -93,22 +93,6 @@ data() {
     selectedDate: null,
   }
 },
-// data: {
-//   newTask: '',
-//   newHour: '',
-//   id: 1,
-//   todos: [],
-//   mode: 'single',
-//   formats: {
-//     input: ['YYYY-MM-DD'],
-//     data: ["YYYY/MM/DD"],
-//   },
-//   modelConfig: {
-//     type: 'string',
-//     mask: 'YYYY'+'年'+'MM'+'月'+'D'+'日' + '（' + 'W' + '）', // Uses 'iso' if missing
-//   },
-//   selectedDate: null,
-// },
 watch: {
   todos: {
       handler: function() {
