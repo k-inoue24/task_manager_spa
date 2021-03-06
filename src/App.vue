@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <header>
-    <div class="title siteTitle"><a href="/">Mr. Task Manager</a></div>
+    <div class="title siteTitle"><a href="/task_manager_spa">Mr. Task Manager</a></div>
     <nav>
       <ul>
-        <li><router-link to="/">本日のタスク</router-link></li>
-        <li><router-link to="/Add">タスク一覧・新規登録</router-link></li>
-        <li><router-link to="/Download">データダウンロード</router-link></li>
+        <li><router-link to="/task_manager_spa">本日のタスク</router-link></li>
+        <li><router-link to="/task_manager_spa/add">タスク一覧・新規登録</router-link></li>
+        <li><router-link to="/task_manager_spa/download">データダウンロード</router-link></li>
       </ul>
     </nav>
     </header>

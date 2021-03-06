@@ -7,15 +7,15 @@ const router = createRouter({
     history: createWebHistory(),
     base: process.env.BASE_URL,
     routes: [{
-            path: '/',
+            path: '/task_manager_spa',
             component: Top
         },
         {
-            path: '/Add',
+            path: '/task_manager_spa/add',
             component: Add
         },
         {
-            path: '/Download',
+            path: '/task_manager_spa/download',
             component: Download
         }
     ]
