@@ -1,4 +1,5 @@
 module.exports = {
-    publicPath: './',
+    publicPath: '/task_manager_spa/',
+    assetsDir: "",
     outputDir: 'docs/'
 }

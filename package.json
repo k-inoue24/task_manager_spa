@@ -2,15 +2,16 @@
     "name": "task_manager",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://k-inoue24.github.io/task_manager_spa",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
+        "deploy": "gh-pages -d dist",
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
         "@popperjs/core": "^2.6.0",
         "core-js": "^3.6.5",
+        "gh-pages": "^3.1.0",
         "v-calendar": "^3.0.0-alpha.3",
         "vue": "^3.0.7",
         "vue-router": "^4.0.4"
