@@ -15,7 +15,7 @@
     </router-view>
     </main>
     <footer>
-      <a href="https://twitter.com/KeitaBangkok">&copy;いのっち</a>
+      Copyright - Keita Inoue, 2021 All Rights Reserved.
     </footer>
   </div>
 </template>

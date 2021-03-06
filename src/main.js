@@ -1,10 +1,9 @@
-import Vue from 'vue'
+import { createApp } from 'vue';
 import App from './App.vue'
 import router from './router.js'
-z
+import VCalendar from 'v-calendar';
 
-
-new Vue({
-  render: h => h(App),
-  router,
-}).$mount('#app');
+const app = createApp(App)
+app.use(router)
+app.use(VCalendar)
+app.mount('#app')
