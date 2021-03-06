@@ -1,5 +1,6 @@
 {
     "name": "task_manager",
+    "homepage": "https://k-inoue24.github.io/task_manager_spa/",
     "version": "0.1.0",
     "private": true,
     "scripts": {
