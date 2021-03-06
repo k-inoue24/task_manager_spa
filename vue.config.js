@@ -1,5 +1,6 @@
 module.exports = {
-    publicPath: '/task_manager_spa/',
+    publicPath: process.env.NODE_ENV === 'production' ?
+        '/task_manager_spa/' : '/',
     assetsDir: "",
     outputDir: 'docs/'
 }
