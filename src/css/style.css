@@ -106,7 +106,7 @@ input {
 .dateTitle:before {
     display: inline-block;
     content: '';
-    background: url(/img/icon_calendar.png) no-repeat;
+    background: url(/task_manager_spa/img/icon_calendar.png) no-repeat;
     background-size: cover;
     width: 17px;
     height: 17px;
