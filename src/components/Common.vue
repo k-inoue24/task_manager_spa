@@ -70,11 +70,12 @@ export default {
         alert('タスク名と予定工数をそれぞれ入力してください')
       }
     },
-    checkConfirm: function(status,taskTitle){
+    checkConfirm: function(status,item){
       var alertMessage;
-      if(status == "remaining") alertMessage = 'タスク名「' + taskTitle + '」を完了にしてよろしいですか？';
-      else alertMessage = 'タスク「' + taskTitle + '」を未完了に戻してよろしいですか？'
-      if(alert(alertMessage)) return;
+      var itemTitle = item.taskTitle;
+      if(status == "remaining") alertMessage = 'タスク名「' + itemTitle + '」を完了にしてよろしいですか？';
+      else alertMessage = 'タスク「' + itemTitle + '」を未完了に戻してよろしいですか？'
+      if(!confirm(alertMessage)) item.taskDone = false;
     },
     downloadCSV: function(){
       var csv = '\ufeff' + '日付,タスク名,工数（h）\n'

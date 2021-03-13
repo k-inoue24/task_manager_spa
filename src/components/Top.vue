@@ -12,7 +12,7 @@
                   <th class="taskDeleteHead"></th>
               </tr>
               <tr v-for="todo in remainingTask" :key="todo.taskId">
-                  <td class="taskChk"><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("remaining",todo.taskTitle)'></td>
+                  <td class="taskChk"><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("remaining",todo)'></td>
                   <td class="taskName">{{todo.taskTitle}}</td>
                   <td class="taskHour"><span>{{todo.taskHour}}</span>h</td>
                   <td class="taskDelete"><button class="btn deleteBtn" v-on:click="deleteItem(todo)">削除</button></td>
@@ -60,7 +60,7 @@
                   <th class="taskHourHead">工数</th>
               </tr>
               <tr v-for="todo in completedTask" :key="todo.taskId">
-                  <td class="taskChk"><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("complete",todo.taskTitle)'></td>
+                  <td class="taskChk"><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("complete",todo)'></td>
                   <td class="taskName">{{todo.taskTitle}}</td>
                   <td class="taskHour"><span>{{todo.taskHour}}</span>h</td>
               </tr>
