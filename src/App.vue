@@ -5,8 +5,8 @@
     <nav>
       <ul>
         <li><router-link to="/task_manager_spa">本日のタスク</router-link></li>
-        <li><router-link to="/task_manager_spa/add">タスク一覧・新規登録</router-link></li>
-        <li><router-link to="/task_manager_spa/download">データダウンロード</router-link></li>
+        <li><router-link to="/task_manager_spa/add">タスク一覧・<br class="s">新規登録</router-link></li>
+        <li><router-link to="/task_manager_spa/download">データ<br class="s">ダウンロード</router-link></li>
       </ul>
     </nav>
     </header>
@@ -25,9 +25,3 @@ export default {
   name: 'App'
 }
 </script>
-
-<style>
-@import "./css/destyle.css";
-@import "./css/style.css";
-
-</style>

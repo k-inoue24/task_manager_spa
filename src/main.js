@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router.js'
 import VCalendar from 'v-calendar';
 import Common from '@/components/Common.vue'
+require('@/scss/destyle.scss');
+require('@/scss/style.scss');
+
 
 
 

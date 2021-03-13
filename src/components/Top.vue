@@ -1,8 +1,7 @@
 <template>
-  <div>
   <h1 class="title pageTitle">本日のタスク</h1>
   <section class="remainingTask">
-      <h2 class="title sectionTitle">{{todayString}}の残タスク</h2>
+      <h2 class="title sectionTitle">{{todayString}}: <br class="s">残タスク</h2>
       <p class="taskMessage" v-if="remainingHour==0">本日の残タスクはありません</p>
       <div class="tableWrap" v-if="remainingHour!=0">
           <table class="taskTable remainingTable">
@@ -28,7 +27,7 @@
       <span></span>
   </div>
   <section class="addTask">
-      <h2 class="title sectionTitle">{{todayString}}のタスク追加</h2>
+      <h2 class="title sectionTitle">{{todayString}}: <br class="s">タスク追加</h2>
       <form @submit.prevent="addItem">
           <div class="tableWrap">
               <table class="taskTable addTable">
@@ -51,7 +50,7 @@
       <span></span>
   </div>
   <section class="completedTask">
-      <h2 class="title sectionTitle">{{todayString}}の完了タスク</h2>
+      <h2 class="title sectionTitle">{{todayString}}: <br class="s">完了タスク</h2>
       <p class="taskMessage" v-if="completedHour==0">本日の完了タスクはありません</p>
       <div class="tableWrap" v-if="completedHour!=0">
           <table class="taskTable doneTable">
@@ -69,5 +68,4 @@
           <div class="hourArea"><span>総工数</span>{{completedHour}}h</div>
       </div>
   </section>
-  </div>
 </template>
