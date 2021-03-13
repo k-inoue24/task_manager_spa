@@ -21,18 +21,18 @@ export default {
   },
   watch: {
     todos: {
-        handler: function() {
+        handler() {
             localStorage.setItem('todos', JSON.stringify(this.todos));
         },
         deep: true
     }
   },
-  mounted: function() {
+  mounted() {
     this.todos = JSON.parse(localStorage.getItem('todos')) || [];
   },
   methods: {
-      addItem: function() {
-          var taskItem = {
+      addItem() {
+          let taskItem = {
               taskDay: this.todayString,
               taskId: this.lastId,
               taskTitle: this.newTask,
@@ -47,15 +47,15 @@ export default {
             alert('タスク名と予定工数をそれぞれ入力してください')
           }
       },
-      deleteItem: function(item) {
+      deleteItem(item) {
         if (confirm('タスク名「' + item.taskTitle + '」を削除してよろしいですか？')) {
           this.todos = this.todos.filter(function(todo){
             return todo.taskId != item.taskId;
           },this)
         }
       },
-      addFutureItem: function(){
-        var taskItem = {
+      addFutureItem(){
+        let taskItem = {
           taskDay: this.selectedDate,
           taskId: this.lastId,
           taskTitle: this.newTask,
@@ -70,102 +70,102 @@ export default {
         alert('タスク名と予定工数をそれぞれ入力してください')
       }
     },
-    checkConfirm: function(status,item){
-      var alertMessage;
-      var itemTitle = item.taskTitle;
+    checkConfirm(status,item){
+      let alertMessage;
+      let itemTitle = item.taskTitle;
       if(status == "remaining") alertMessage = 'タスク名「' + itemTitle + '」を完了にしてよろしいですか？';
       else alertMessage = 'タスク「' + itemTitle + '」を未完了に戻してよろしいですか？'
       if(!confirm(alertMessage)) item.taskDone = false;
     },
-    downloadCSV: function(){
-      var csv = '\ufeff' + '日付,タスク名,工数（h）\n'
+    downloadCSV(){
+      let csv = '\ufeff' + '日付,タスク名,工数（h）\n'
       this.todos.forEach(el => {
-        var line = el['taskDay'] + ',' + el['taskTitle']+ ',' + el['taskHour'] + '\n';
+        let line = el['taskDay'] + ',' + el['taskTitle']+ ',' + el['taskHour'] + '\n';
         csv += line;
       })
-      var blob = new Blob([csv], { type: 'text/csv' });
-      var link = document.createElement('a');
+      let blob = new Blob([csv], { type: 'text/csv' });
+      let link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
       link.download = 'all_task.csv';
       link.click();
     }
   },
   computed: {
-      today: function() {
-          var today = new Date();
+      today() {
+          let today = new Date();
           return today;
       },
-      todayString: function() {
-          var dayArray = new Array("日","月","火","水","木","金","土");
-          var todayString = this.today.getFullYear() + '年' + (this.today.getMonth() + 1) + '月' + this.today.getDate() + '日' + '（' + dayArray[this.today.getDay()] + '）';
+      todayString() {
+          let dayArray = new Array("日","月","火","水","木","金","土");
+          let todayString = this.today.getFullYear() + '年' + (this.today.getMonth() + 1) + '月' + this.today.getDate() + '日' + '（' + dayArray[this.today.getDay()] + '）';
           return todayString;
       },
-      remainingTask: function(){
+      remainingTask(){
           return this.todos.filter(function(todo){
               return todo.taskDone == false && todo.taskDay == this.todayString;
           },this)
       },
-      remainingHour: function(){
-          var remainingHour = 0;
+      remainingHour(){
+          let remainingHour = 0;
           this.remainingTask.forEach(function(el){
               remainingHour += parseInt(el.taskHour, 10);
           });
           return remainingHour;
       },
-      completedTask: function(){
+      completedTask(){
           return this.todos.filter(function(todo){
               return todo.taskDone == true && todo.taskDay == this.todayString
           },this);
       },
-      completedHour: function(){
-          var completedHour = 0;
+      completedHour(){
+          let completedHour = 0;
           this.completedTask.forEach(function(el){
               completedHour += parseInt(el.taskHour, 10);
           });
           return completedHour;
       },
-      lastId: function() {
-        var lastId = 1;
+      lastId() {
+        let lastId = 1;
         this.todos.forEach(function(el){
           if(lastId <= el.taskId) lastId = el.taskId + 1;
         });
         return lastId;
       },
-      dateSelect: function() {
-        var dateSelect = [];
-        var dateSelectString = [];
-        var dayArray = new Array("日","月","火","水","木","金","土");
-        for(var i = 0; i < 9; i++) {
+      dateSelect() {
+        let dateSelect = [];
+        let dateSelectString = [];
+        let dayArray = new Array("日","月","火","水","木","金","土");
+        for(let i = 0; i < 9; i++) {
           dateSelect[i] = this.today.setDate(this.today.getDate() - i);
           dateSelectString[i] = dateSelect[i].getFullYear() + '年' + (dateSelect[i].getMonth() + 1) + '月' + dateSelect[i].getDate() + '日' + '（' + dayArray[dateSelect[i].getDay()] + '）';
         }
         return dateSelect;
       },
-      futureTask: function(){
+      futureTask(){
         return this.todos.filter(function(todo){
           return todo.taskDone == false && todo.taskDay == this.selectedDate
         },this);
       },
-      futureDoneTask: function(){
+      futureDoneTask(){
         return this.todos.filter(function(todo){
           return todo.taskDone == true && todo.taskDay == this.selectedDate
         },this);
       },
-      futureTaskHour: function(){
-        var futureTaskHour = 0;
+      futureTaskHour(){
+        let futureTaskHour = 0;
         this.futureTask.forEach(function(el){
           futureTaskHour += parseInt(el.taskHour, 10);
         });
         return futureTaskHour;
       },
-      futureDoneTaskHour: function(){
-        var futureDoneTaskHour = 0;
+      futureDoneTaskHour(){
+        let futureDoneTaskHour = 0;
         this.futureDoneTask.forEach(function(el){
           futureDoneTaskHour += parseInt(el.taskHour, 10);
         });
         return futureDoneTaskHour;
       },
-      archiveTask: function(){
+      archiveTask(){
         return this.todos.filter(function(todo){
           return todo.taskDone == false && todo.taskDay == this.selectedDate
         },this);

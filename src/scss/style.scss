@@ -68,7 +68,7 @@ br.s {
 }
 
 .mb20 {
-    margin-bottom: 20px;
+    margin-bottom: 20px!important;
 }
 
 
@@ -250,19 +250,19 @@ nav {
                 }
             }
         }
-        .hourArea {
-            display: flex;
-            align-items: center;
-            margin-top: 5px;
-            margin-left: 5px;
-            span {
-                display: inline-block;
-                color: #fff;
-                font-size: 1.3rem;
-                background: #555;
-                padding: 2px 4px;
-                margin-right: 6px;
-            }
+    }
+    .hourArea {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        margin-left: 5px;
+        span {
+            display: inline-block;
+            color: #fff;
+            font-size: 1.3rem;
+            background: #555;
+            padding: 2px 4px;
+            margin-right: 6px;
         }
     }
 }

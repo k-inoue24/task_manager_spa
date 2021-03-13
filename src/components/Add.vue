@@ -58,7 +58,7 @@
             <th class="taskHourHead">工数</th>
           </tr>
           <tr v-for="todo in futureTask" :key="todo.taskId">
-              <td><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("remaining",todo.taskTitle)'></td>
+              <td><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("remaining",todo)'></td>
               <td>{{todo.taskTitle}}</td>
               <td><span>{{todo.taskHour}}</span>h</td>
           </tr>
@@ -75,7 +75,7 @@
             <th class="taskHourHead">工数</th>
           </tr>
           <tr v-for="todo in futureDoneTask" :key="todo.taskId">
-              <td><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("complete",todo.taskTitle)'></td>
+              <td><input type="checkbox" v-model="todo.taskDone" v-on:change='checkConfirm("complete",todo)'></td>
               <td>{{todo.taskTitle}}</td>
               <td><span>{{todo.taskHour}}</span>h</td>
           </tr>
